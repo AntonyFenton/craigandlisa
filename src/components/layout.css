@@ -628,23 +628,6 @@ pre tt:after {
 }
 
 /* Helpers */
-
-.hero {
-  background: -webkit-linear-gradient(50deg, #1240a1 20%, #98cbe7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 2s ease-in;
-}
-
 .text-center {
   text-align: center;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
