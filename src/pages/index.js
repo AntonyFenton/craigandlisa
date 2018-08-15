@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 
-import styled, { keyframes } from 'react-emotion'
+import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
   0% {
@@ -17,7 +17,7 @@ const Hero = styled('div')`
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ${fadeIn} 2s ease-in;
+  animation: ${fadeIn} 1s ease-in;
 `
 
 const IndexPage = () => (

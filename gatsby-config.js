@@ -4,6 +4,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -17,11 +18,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    },
   ],
 }
