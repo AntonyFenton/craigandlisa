@@ -15,6 +15,7 @@ const fadeIn = keyframes`
 const Hero = styled('div')`
   background: -webkit-linear-gradient(50deg, #1240a1 20%, #98cbe7);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: ${fadeIn} 2s ease-in;
 `
