@@ -5,11 +5,6 @@ html {
 }
 body {
   margin: 0;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
 }
 article,
 aside,
@@ -221,7 +216,6 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 }
 h1 {
   margin-left: 0;
@@ -236,8 +230,9 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 300;
   text-rendering: optimizeLegibility;
-  font-size: 4.25rem;
-  line-height: 1.1;
+  font-size: 3.25rem;
+  line-height: 1em;
+  text-shadow: 1px 1px 11px #00000017;
 }
 h2 {
   margin-left: 0;
@@ -249,9 +244,8 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
@@ -266,9 +260,8 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
@@ -283,9 +276,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
@@ -630,4 +622,17 @@ pre tt:after {
 /* Helpers */
 .text-center {
   text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr repeat(5, 1fr) 0.5fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
