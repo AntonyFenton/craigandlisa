@@ -44,7 +44,6 @@ const HeroBanner = styled.section`
     grid-column: 2 / span 7;
   }
 `
-
 const Hero = () => (
   <HeroBanner>
     <div>

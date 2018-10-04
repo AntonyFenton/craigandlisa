@@ -1,11 +1,7 @@
 import React from 'react'
-import storyImg1 from '../../images/one.png'
-import storyImg2 from '../../images/craiglisa3.jpg'
-
 import styled, { keyframes } from 'styled-components'
 
 const StrotyItem = styled.section`
-        visibility: hidden;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         margin-bottom: 3rem;
@@ -17,7 +13,7 @@ const StrotyItem = styled.section`
         }
 
         img {
-            grid-column: 8 / 13;
+            grid-column: 8 / 12;
             grid-row: 2 / 3;
         }
 
@@ -32,52 +28,36 @@ const StrotyItem = styled.section`
         grid-template-columns: repeat(12, 1fr);
 
         h2 {
-            grid-column: 8 / 11;
-            grid-row: 2;
+            grid-column: 7 / 10;
+            grid-row: 1;
             font-weight: bold;
         }
 
         img {
-            grid-column: 2 / 7;
+            grid-column:  2/ 6;
             grid-row: 1 / 3;
+            transform:translateY(100px)
         }
 
         p {
-            grid-column: 8/ 12;
-            grid-row: 3;
+            grid-column: 7/ 12;
+            grid-row: 2;
         }
      }
   }
 `
 
-const Story = () => (
-  <main>
-    <StrotyItem>
-      <h2>Lisa and Craig are sayin yes!</h2>
-      <img src={storyImg1} />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-        consequatur provident! Consectetur quam iusto, fugiat praesentium qui
-        ducimus corporis ut non sunt, blanditiis ipsum eligendi eos velit sit,
-        veritatis doloremque. Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Officiis, consequatur provident! Consectetur quam
-        iusto, fugiat praesentium qui ducimus corporis ut non sunt, blanditiis
-        ipsum eligendi eos velit sit, veritatis doloremque!
-      </p>
-    </StrotyItem>
-    <StrotyItem>
-      <h2>Lisa and Craig are sayin yes!</h2>
-      <img src={storyImg2} />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-        consequatur provident! Consectetur quam iusto, fugiat praesentium qui
-        ducimus corporis ut non sunt, blanditiis ipsum eligendi eos velit sit,
-        veritatis doloremque. Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Officiis, consequatur provident! Consectetur quam
-        iusto, fugiat praesentium qui ducimus corporis ut non sunt, blanditiis
-        ipsum eligendi eos velit sit, veritatis doloremque!
-      </p>
-    </StrotyItem>
-  </main>
-)
+class Story extends React.Component {
+  render() {
+    const articles = this.props.content.edges.map(data => (
+      <StrotyItem key={data.node.id}>
+        <h2>{data.node.data.storytitle.text}</h2>
+        <p>{data.node.data.storycontent.text}</p>
+        <img src={data.node.data.storyimage.url} />
+      </StrotyItem>
+    ))
+    return <div>{articles}</div>
+  }
+}
+
 export default Story

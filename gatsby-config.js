@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: 'Craig and Lisa',
@@ -21,8 +22,7 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'craigandlisa',
-        accessToken:
-        process.env.PRISMIC_API_TOKEN,
+        accessToken: process.env.PRISMIC_API_TOKEN,
       },
     },
     'gatsby-plugin-offline',

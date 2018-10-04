@@ -14,14 +14,46 @@ const PageLayout = styled.main`
   align-items: center;
 `
 
-const IndexPage = () => (
-  <Layout>
-    <PageLayout>
-      <Nav />
-      <Hero />
-      <Story />
-    </PageLayout>
-  </Layout>
-)
+class IndexPage extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <PageLayout>
+          <Nav />
+          <Hero />
+          <Story content={this.props.data.allPrismicStory} />
+        </PageLayout>
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage
+
+export const query = graphql`
+  query AboutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allPrismicStory {
+      edges {
+        node {
+          id
+          data {
+            storytitle {
+              text
+            }
+            storyimage {
+              url
+            }
+            storycontent {
+              text
+            }
+          }
+        }
+      }
+    }
+  }
+`
