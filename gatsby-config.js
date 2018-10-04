@@ -22,7 +22,7 @@ module.exports = {
       options: {
         repositoryName: 'craigandlisa',
         accessToken:
-          'MC5XMHl6MlNVQUFDUUFCSkNy.77-9WRsu77-9JURA77-977-977-977-977-9DFPvv71M77-9YlVj77-977-977-977-977-9Pl3vv73vv70677-9',
+        process.env.PRISMIC_API_TOKEN,
       },
     },
     'gatsby-plugin-offline',
