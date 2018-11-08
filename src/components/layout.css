@@ -1,5 +1,5 @@
 html {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Nunito Sans', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -183,7 +183,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 100% 'Nunito Sans', sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -197,8 +197,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: hsl(0, 0%, 16%);
+  font-family: 'Nunito Sans', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -258,7 +258,7 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.8rem;
   color: inherit;
   font-family: 'Playfair Display', serif;
   font-weight: 300;
@@ -274,7 +274,7 @@ h4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.8rem;
   color: inherit;
   font-family: 'Playfair Display', serif;
   font-weight: 300;
@@ -378,7 +378,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.8rem;
 }
 figure {
   margin-left: 0;

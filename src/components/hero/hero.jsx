@@ -1,7 +1,5 @@
 import React from 'react'
-
 import styled, { keyframes } from 'styled-components'
-
 import pic from '../../images/craiglisa100.jpg'
 
 const fadeIn = keyframes`
@@ -13,21 +11,31 @@ const fadeIn = keyframes`
   }
 `
 const HeroBanner = styled.section`
-  width: 100%;
-  height: 30rem;
-
+  display: flex;
+  align-items: flex-start;
   animation: ${fadeIn} 1s ease-in;
-  text-align: left;
+  width: calc(100% + 3rem);
+  height: 35rem;
+  text-align: center;
   background-image: url(${pic});
   background-size: cover;
-  background-position: center;
+  background-position: 80%;
   position: relative;
   z-index: 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: center;
   color: white;
   margin-bottom: 3rem;
+  padding: 4rem 1.5rem;
+  justify-content: center;
+
+  @media (min-width: 600px) {
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 5rem;
+    padding: 0 1.5rem;
+    background-position: center;
+  }
 
   &:before {
     content: '';
@@ -39,11 +47,8 @@ const HeroBanner = styled.section`
     background: rgba(227, 78, 78, 0.16);
     z-index: -1;
   }
-
-  div {
-    grid-column: 2 / span 7;
-  }
 `
+
 const Hero = () => (
   <HeroBanner>
     <div>

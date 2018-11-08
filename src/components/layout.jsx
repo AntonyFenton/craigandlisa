@@ -26,9 +26,9 @@ const Layout = ({ children, data }) => (
           ]}
         >
           <link
-            href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700"
+            href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Nunito+Sans:400,700"
             rel="stylesheet"
-          />>
+          />
           <html lang="en" />
         </Helmet>
         {children}
