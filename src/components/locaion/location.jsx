@@ -1,7 +1,8 @@
 import React from 'react'
 import Waypoint from 'react-waypoint'
 import styled, { keyframes } from 'styled-components'
-
+import pattern from '../../images/leaf.png'
+import pattern2 from '../../images/plantGroup.png'
 const slideIn = keyframes`
   from {
     opacity: 0.1;
@@ -18,35 +19,95 @@ const Details = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
+  width: 100%;
+  position: relative;
 
   div {
+    width: 100%;
     text-align: center;
-    margin-bottom: 5rem;
   }
 
   @media (min-width: 600px) {
+    width: calc(100% - 8em);
+    margin: 0 4em rem 4em;
     flex-direction: row;
+
     div {
       width: 25%;
+      margin-bottom: 5rem;
     }
 
     img {
       width: 65%;
     }
+
+    &.fadeIn {
+      animation: 3s ${slideIn} forwards;
+    }
   }
 
-  .mapButton {
+  .mapbutton {
     display: inline-block;
-    padding: 1em 2em;
-    border-radius: 6px;
+    margin: 1em 0 5em 0;
+    padding: 1.3em 2.8em;
     text-decoration: none;
-    color: white;
-    background: linear-gradient(-70deg, #658dcc, #2d1182 130%);
-  }
+    color: black;
+    border: 2px solid #90aedb;
+    position: relative;
+    cursor: pointer;
 
-  &.fadeIn {
-    animation: 3s ${slideIn} forwards;
+    &:hover {
+      border: 2px solid #acbfdb;
+
+      &:before,
+      &:after {
+        opacity: 0.6;
+      }
+    }
+
+    &:before {
+      content: '';
+      background-image: url(${pattern});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      z-index: 100;
+      transform: rotate(-110deg);
+    }
+
+    &:after {
+      content: '';
+      background-image: url(${pattern2});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      bottom: -30px;
+      right: -28px;
+      z-index: 100;
+    }
+  }
+`
+
+const Title = styled.h3`
+  color: #8faddd7a;
+  font-size: 4rem;
+  left: -5px;
+  position: relative;
+
+  @media (min-width: 600px) {
+    font-size: 6rem;
+    position: absolute;
+    top: -80px;
+    left: -5px;
   }
 `
 
@@ -61,21 +122,23 @@ class Location extends React.Component {
 
   onEnter({ previousPosition }) {
     if (previousPosition === Waypoint.below) {
-      this.setState({
-        isAnimated: true,
-      })
+      this.setState({ isAnimated: true })
     }
   }
 
   render() {
     return (
-      <Waypoint onEnter={this.onEnter}>
+      <Waypoint onEnter={this.onEnter} topOffset="100px">
         <Details className={this.state.isAnimated ? 'fadeIn' : ''}>
-          <div>
+          <div id="details">
+            <Title>Location</Title>
+            <p>
+              <small>Ceremony 14:30</small>
+            </p>
             <h3>Keston Village Hall</h3>
             <p>132 Heathfield Rd, Bromley</p>
             <p>Keston, BR2 6BF</p>
-            <a className="mapButton" href="/">
+            <a className="mapbutton" href="https://goo.gl/maps/mcUJiXV4w2F2">
               View on Map
             </a>
           </div>

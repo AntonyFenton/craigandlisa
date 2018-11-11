@@ -29,12 +29,17 @@ const HeroBanner = styled.section`
 
   @media (min-width: 600px) {
     width: 100%;
+    height: 43rem;
     align-items: center;
     justify-content: flex-start;
     text-align: left;
-    margin-bottom: 5rem;
-    padding: 0 1.5rem;
+    margin-bottom: 12rem;
+    padding: 0 4em;
     background-position: center;
+
+    h1 {
+      font-size: 5.25rem;
+    }
   }
 
   &:before {

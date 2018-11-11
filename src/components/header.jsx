@@ -32,10 +32,12 @@ const Nav = styled.nav`
 
 const Header = () => (
   <Nav>
-    <Link to="/">Our Story</Link>
-    <Link to="/">Details</Link>
-    <Link to="/">Menu</Link>
-    <Link to="/">RSVP</Link>
+    <Link to="/#story">Our Story</Link>
+    <Link to="/#details">Location</Link>
+    <Link to="/#food">Food</Link>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZ1MM-8NVzGj9C3QV6QkmTTBQg_R2GqHToEagNibUHs-JKtg/viewform">
+      RSVP
+    </a>
   </Nav>
 )
 
